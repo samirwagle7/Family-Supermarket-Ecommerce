@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce-Samir Wagle</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsiveStyles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="https://kit.fontawesome.com/18e31dbed1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- !header section -->
+    <div class="header" class="section-m1">
+            <a href="#"><img src="./img/logo.png" class="logo" alt="logo"></a>
+        <nav>
+            <ul id="navbar">
+                <li><a  href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="shop-cart"><a href="cart.hltml" class="active"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </nav>
+
+        <div id="mobile">
+            <a href="cart.hltml"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    
+    <!-- front-headline -->
+    <section id="front-page">
+        <h2>#Stay Home</h2>
+        <p>Get the items you want in Your Home wihtin a click~</p>
+    </section>
+ 
+    <!-- cart section -->
+    <div id="cart" class="section-p1">
+        <table>
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Proudct</td>
+                    <td>Pirce</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><a href=""><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
+                    <td><img id="cart-img" src="img/products/f1.jpg" alt=""></td>
+                    <td>Summer T-shirts</td>
+                    <td>Rs.1099</td>
+                    <td><input type="number" value="2"></td>
+                    <td>Rs.2198</td>
+                </tr>
+                <tr>
+                    <td><a href=""><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
+                    <td><img id="cart-img" src="img/products/f2.jpg" alt=""></td>
+                    <td>Summer T-shirts</td>
+                    <td>Rs.1099</td>
+                    <td><input type="number" value="2"></td>
+                    <td>Rs.2198</td>
+                </tr>
+                <tr>
+                    <td><a href=""><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
+                    <td><img id="cart-img" src="img/products/f3.jpg" alt=""></td>
+                    <td>Summer T-shirts</td>
+                    <td>Rs.1099</td>
+                    <td><input type="number" value="2"></td>
+                    <td>Rs.2198</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- add and checkout -->
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Appy Coupons</h3>
+            <div class="apply">
+                <input type="text" placeholder="Enter your coupon">
+                <button class="apply-btn">Apply</button>
+            </div>
+        </div>
+
+        <div id="sub-total">
+            <h3>Cart Totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td>RS. 3099</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>RS. 9099</strong></td>
+                </tr>
+            </table>
+            <button class=" subtotal-btn">Proceed to Checkout</button>
+        </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section id="newsletter-section" class="section-p1">
+        <div class="newstext">
+            <h4>Sign Up for Newsletter</h4>
+            <p>Get Updates about latest products and <span>Special Offers</span>.</p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your Email Address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+    
+    <!-- footer section -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="./img/logo.png" alt="logo">
+            <h4>Contact</h4>
+            <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
+            <p> <strong>Phone:</strong> 9863948660</p>
+            <p> <strong>Hours:</strong> 10:00 - 17:00, Sun - Fri</p>
+            <div class="follow">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="apple_store">
+                <img src="img/pay/play.jpg" alt="googlePlay_store">
+
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="pamentmethonds">
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2023, Samir Wagle - All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

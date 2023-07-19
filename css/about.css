@@ -1,0 +1,37 @@
+/* about us page */
+#front-page.about-page {
+    background-image: url("../img/about/banner.png"); /* change the bg-img from product page header image*/
+}
+
+#about-front {
+    display: flex;
+    align-items: center;
+}
+
+#about-front img {
+    width: 50%;
+    height: 500px;
+}
+
+#about-front div { 
+    background-color: #e3fff9;
+    height: 500px;
+    text-align: justify;
+    
+}
+#about-front h2 {
+    text-align: center;
+    padding-top: 50px;
+}
+#about-front p {
+    font-size: 20px;
+    line-height: 30px;
+}
+#about-front marquee {
+    background-color: #95f4ff;
+    margin-top: 90px;
+    height: 25px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
