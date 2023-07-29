@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">321
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce-Samir Wagle</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsiveStyles.css">
-    <link rel="stylesheet" href="css/cart.css">
     <script src="https://kit.fontawesome.com/18e31dbed1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -38,7 +36,7 @@
     </section>
  
     <!-- cart section -->
-    <div id="cart" class="section-p1">
+    <!-- <div id="cart" class="section-p1">
         <table>
             <thead>
                 <tr>
@@ -76,9 +74,15 @@
                     <td><input type="number" value="2"></td>
                     <td>Rs.2198</td>
                 </tr>
-            </tbody>
+            </table>
         </table>
-    </div>
+    </div> -->
+
+    <!-- Cart Section -->
+    <section class="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+    </section>
 
     <!-- add and checkout -->
     <section id="cart-add" class="section-p1">
@@ -109,6 +113,21 @@
             <button class=" subtotal-btn">Proceed to Checkout</button>
         </div>
     </section>
+
+    <section>
+        <h1>Shopping Cart</h1>
+        <div class="cart-info">
+          <p>Items in Cart: <span id="cart-count">0</span></p>
+        </div>
+    </section>
+    
+      <section class="cart-items">
+        <div class="cart-container section-p1">
+          <h2>Cart Items</h2>
+          <div id="cart-items"></div>
+        </div>
+      </section>
+
     <!-- Newsletter Section -->
     <section id="newsletter-section" class="section-p1">
         <div class="newstext">
@@ -162,7 +181,7 @@
                 <img src="img/pay/play.jpg" alt="googlePlay_store">
 
             </div>
-            <p>Secured Payment Gateways</p>
+            <p>Secured Payment Gateways</p>  
             <img src="img/pay/pay.png" alt="pamentmethonds">
         </div>
 

@@ -17,7 +17,7 @@
             'slug' => 'hp-victos',
             'desc' => 'This product is for professional Programmer to code on multiple plateform.',
             'attributes' => [
-                'color_variations' => ['silver', 'black'],
+                'color_variations' => ['silver', 'black', 'blue', 'red', 'yellow'],
                 'price' => '105000',
                 'screen_size' => '14"'
             ],
@@ -69,7 +69,8 @@
                             if($c_key == 'attributes'): 
                                 foreach($data as $sc_key => $attr):
                                     if($sc_key == "color_variations"): ?>
-                                        <td>Color</td>
+                                        <!-- <td>Color</td> -->
+                                        <td><?php echo implode(", ", $attr); ?></td>
                                     <?php else: ?> 
                                         <td><?php echo $attr; ?></td>      
                                 <?php endif; 
