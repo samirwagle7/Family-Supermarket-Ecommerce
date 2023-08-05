@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce-Samir Wagle</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsiveStyles.css">
     <script src="https://kit.fontawesome.com/18e31dbed1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- !header section -->
-    <div class="header" class="section-m1">
-            <a href="#"><img src="./img/logo.png" class="logo" alt="logo"></a>
+    <!-- header section -->
+    <div class="header">
+            <a href="index.html"><img src="./img/logo.png" class="logo" alt="logo"></a>
         <nav>
             <ul id="navbar">
                 <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li id="shop-cart"><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i></a></li>
                 <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
         </nav>
@@ -70,16 +69,66 @@
         </div>
     </section>
 
+    <!-- Categories -->
+    <div class="ft-pro home-pg">
+        <h2>Shop by Category</h2>
+    </div>
+    <section id="grocery-categories">
+        <div class="category-grid section-p1 section-m1">
+            <div class="category-item">
+                <img src="img/fruits.jpg" alt="Fruits">
+                <h3>Fruits</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/vegetables.jpg" alt="Vegetables">
+                <h3>Vegetables</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/dairy.jpg" alt="Dairy">
+                <h3>Dairy Products</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/bakery.jpg" alt="Bakery">
+                <h3>Bakery & Bread</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/meat.jpg" alt="Meat">
+                <h3>Meat & Poultry</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/seafood.jpg" alt="Seafood">
+                <h3>Seafood</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/beverages.jpg" alt="Beverages">
+                <h3>Beverages</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/snacks.jpg" alt="Snacks">
+                <h3>Snacks</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/canned-food.jpg" alt="Canned Goods">
+                <h3>Canned Goods</h3>
+            </div>
+            <div class="category-item">
+                <img src="img/cleaning-supplies.jpg" alt="Cleaning Supplies">
+                <h3>Cleaning Supplies</h3>
+            </div>
+        </div>
+    </section>
+    
+
     <!-- Product Section-->
     <section class="products">
-        <h2>Products</h2>
-        <p>Summer Collection New Mordren Design</p>
+        <h2>Grocery Items</h2>
+        <p>Fresh and Healthy Products</p>
         <div class="pro-container section-p1">
             <div class="product">
-                <img src="img/products/f1.jpg" alt="">
+                <img src="img/products/red-onion.jpg" alt="">
                 <div class="description">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <span>Red Onion</span>
+                    <h5>Fresh</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -93,10 +142,10 @@
             </div>
             
             <div class="product">
-                <img src="img/products/f8.jpg" alt="">
+                <img src="img/products/cauli-flower.jpg" alt="">
                 <div class="description">
-                    <span>Nike</span>
-                    <h5>Ladies Stylish T-Shirts</h5>
+                    <span>CauliFlower</span>
+                    <h5>Recently Stocked</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -110,10 +159,10 @@
             </div>
 
             <div class="product">
-                <img src="img/products/f6.jpg" alt="">
+                <img src="img/products/garlic-bread.jpg" alt="garlic-bread">
                 <div class="description">
-                    <span>Louis Vuitton</span>
-                    <h5>Stylis Cotton Shirts</h5>
+                    <span>Garlic Bread</span>
+                    <h5>Most Healthy Bread</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -127,10 +176,10 @@
             </div>
 
             <div class="product">
-                <img src="img/products/f4.jpg" alt="">
+                <img src="img/products/cow-milk.jpg" alt="">
                 <div class="description">
-                    <span>Gucci</span>
-                    <h5>Summer Vibe T-Shirts</h5>
+                    <span>Millk</span>
+                    <h5>Fresh Cow Milk</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -145,23 +194,23 @@
         </div>
     </section>
 
-    <!-- banner section -->
+    <!-- promotion banner section -->
     <section id="banner" class="section-m1 section-p1">
-        <h4>Repair Services</h4>
-        <h2>Up to <span>70% off</span> on All T-shirts & Accesories</h2>
+        <h4>Grocery</h4>
+        <h2>Up to <span>70% off</span> on Our New Arrival Products</h2>
         <button>Explore More <i class="fa-sharp fa-solid fa-long-arrow-right"></i> </button>
     </section>
 
     <!-- New Arrival Section / Same as product-->
     <section class="products">
         <h2>New Arrivals</h2>
-        <p>Grab Our Latest Products Now</p>
+        <p>Grab Our Latest and Fresh Products Now</p>
         <div class="pro-container section-p1">
             <div class="product">
-                <img src="img/products/n1.jpg" alt="">
+                <img src="img/products/white-onion.jpg" alt="">
                 <div class="description">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <span>White Onion</span>
+                    <h5>New Arrival Fresh</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -175,10 +224,10 @@
             </div>
             
             <div class="product">
-                <img src="img/products/n2.jpg" alt="">
+                <img src="img/products/broccoli.jpg" alt="">
                 <div class="description">
-                    <span>Nike</span>
-                    <h5>Ladies Stylish T-Shirts</h5>
+                    <span>Broccoli</span>
+                    <h5>New Arrival Cauli</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -192,10 +241,10 @@
             </div>
 
             <div class="product">
-                <img src="img/products/n3.jpg" alt="">
+                <img src="img/products/oreo.jpg" alt="garlic-bread">
                 <div class="description">
-                    <span>Louis Vuitton</span>
-                    <h5>Stylis Cotton Shirts</h5>
+                    <span>Oreo</span>
+                    <h5>New Biscuit</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -209,10 +258,10 @@
             </div>
 
             <div class="product">
-                <img src="img/products/n4.jpg" alt="">
+                <img src="img/products/fruit-candy.jpg" alt="">
                 <div class="description">
-                    <span>Gucci</span>
-                    <h5>Summer Vibe T-Shirts</h5>
+                    <span>Candy</span>
+                    <h5>Fruit Candy</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -232,14 +281,14 @@
         <div class="banner-box">
             <h4>Crazy Deals</h4>
             <h2>Buy 1 Get 1 Free</h2>
-            <span>The best classic dress in on sale at SamirWagle</span>
+            <span>The Fresh and best is on sale at SamirWagle</span>
             <button>Learn More</button>
         </div>
 
         <div class="banner-box banner-box2">
             <h4>Spring/Summer</h4>
             <h2>Upcoming Season</h2>
-            <span>The best classic dress in on sale at SamirWagle</span>
+            <span>The best quality goods in on sale</span>
             <button>Collection</button>
         </div>
     </section>
@@ -248,20 +297,19 @@
     <section id="banner3">
         <div class="banner-box">
             <h2>SEASONAL SALE</h2>
-            <h3>Winter Collection -50% OFF</h3>
+            <h3>Sesonal Fruites And Veggies -50% OFF</h3>
         </div>
 
         <div class="banner-box banner-box2">
-            <h2>New Couples Collection</h2>
-            <h3>For All Weather</h3>
+            <h2>Nutritional Fruits</h2>
+            <h3>Benefit for All age groups</h3>
         </div>
 
         <div class="banner-box banner-box3">
-            <h2>Ladies</h2>
-            <h3>Fashion Collection -50% OFF</h3>
+            <h2>Combo</h2>
+            <h3>Combo Fruite and Veggies -50% OFF</h3>
         </div>
     </section>
-
 
     <!-- Newsletter Section -->
     <section id="newsletter-section" class="section-p1">
@@ -269,16 +317,16 @@
             <h4>Sign Up for Newsletter</h4>
             <p>Get Updates about latest products and <span>Special Offers</span>.</p>
         </div>
-        <div class="form">
+        <form action="login.html" class="form">
             <input type="text" placeholder="Your Email Address">
-            <button class="normal">Sign Up</button>
-        </div>
+            <button type="submit" class="normal" >Sign Up</button>
+        </form>
     </section>
     
     <!-- footer section -->
     <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="./img/logo.png" alt="logo">
+            <a href="index.html"><img class="logo" src="./img/logo.png" alt="logo"></a> 
             <h4>Contact</h4>
             <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
             <p> <strong>Phone:</strong> 9863948660</p>
@@ -292,17 +340,17 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="termsCondtions.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View cart</a>
+            <a href="login.html">Sign In</a>
+            <a href="cart.html">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -317,14 +365,13 @@
 
             </div>
             <p>Secured Payment Gateways</p>
-            <img src="img/pay/pay.png" alt="pamentmethonds">
+            <img src="img/pay/pay.png" alt="payment methods">
         </div>
 
         <div class="copyright">
             <p>Copyright © 2023, Samir Wagle - All Rights Reserved</p>
         </div>
     </footer>
-
 
     <script src="script.js"></script>
 </body>

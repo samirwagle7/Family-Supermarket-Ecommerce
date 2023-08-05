@@ -8,40 +8,40 @@
     <script src="https://kit.fontawesome.com/18e31dbed1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- !header section -->
+    <!-- header section -->
     <div class="header">
-        <a href="#"><img src="./img/logo.png" class="logo" alt="logo"></a>
-        <nav>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a class="active" href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="shop-cart"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a></li>
-            </ul>
-        </nav>
+        <a href="index.html"><img src="./img/logo.png" class="logo" alt="logo"></a>
+    <nav>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="shop-cart"><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+    </nav>
 
-        <div id="mobile">
-            <a href="cart.hltml"><i class="fa-solid fa-cart-shopping"></i></a>
-            <i id="bar" class="fa-solid fa-bars"></i>
-        </div>
+    <div id="mobile">
+        <a href="cart.hltml"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
     </div>
+</div>
     
     <!-- front-headline -->
     <section id="front-page" class="about-page">
         <h2>#About Us</h2>
-        <p>Know more... #about the Samir Wagle ecommerce</p>
+        <p>Know more... #about the Samir Wagle's Grocery Store</p>
     </section>
     
     <section id="about-front" class="section-p1 section-m1">
-        <img src="img/about/a6.jpg" alt="banner">
+        <img src="img/about/gro-ani.jpg" alt="banner">
         <div>
             <h2>Who We are?</h2>
-            <p class="section-p1">Samir Wagle's ecommerce site offers a wide range of products, catering to diverse customer needs. With a user-friendly interface and secure payment options, it ensures a seamless shopping experience. From electronics to fashion, the site provides quality products at competitive prices, making it a trusted destination for online shoppers.</p>
+            <p class="section-p1">At Samir Wagle's Grocery Store, we are dedicated to providing the finest selection of fresh and high-quality groceries to our valued customers. With a commitment to excellence, we strive to offer a diverse range of products and ensure a seamless shopping experience. Trust us for all your grocery needs and experience convenience and satisfaction like never before.</p>
             <!-- <abbr title="">We provide you the Best quality with Most valueabe products</abbr> -->
-            <marquee behavior="" direction="left">We provide you the Best quality with Most valueabe products</marquee>
+            
         </div>
     </section>
 
@@ -76,10 +76,22 @@
         </div>
     </section>
 
+    <!-- Newsletter Section -->
+    <section id="newsletter-section" class="section-p1">
+        <div class="newstext">
+            <h4>Sign Up for Newsletter</h4>
+            <p>Get Updates about latest products and <span>Special Offers</span>.</p>
+        </div>
+        <form action="login.html" class="form">
+            <input type="text" placeholder="Your Email Address">
+            <button type="submit" class="normal" >Sign Up</button>
+        </form>
+    </section>
+
     <!-- footer section -->
     <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="img/logo.png" alt="logo">
+            <a href="index.html"><img class="logo" src="./img/logo.png" alt="logo"></a> 
             <h4>Contact</h4>
             <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
             <p> <strong>Phone:</strong> 9863948660</p>
@@ -93,17 +105,17 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="termsCondtions.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View cart</a>
+            <a href="login.html">Sign In</a>
+            <a href="cart.html">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -118,7 +130,7 @@
 
             </div>
             <p>Secured Payment Gateways</p>
-            <img src="img/pay/pay.png" alt="pamentmethonds">
+            <img src="img/pay/pay.png" alt="payment methods">
         </div>
 
         <div class="copyright">

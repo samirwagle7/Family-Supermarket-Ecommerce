@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">321
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +8,26 @@
     <script src="https://kit.fontawesome.com/18e31dbed1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- !header section -->
-    <div class="header" class="section-m1">
-            <a href="#"><img src="./img/logo.png" class="logo" alt="logo"></a>
-        <nav>
-            <ul id="navbar">
-                <li><a  href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="shop-cart"><a href="cart.hltml" class="active"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-            </ul>
-        </nav>
+    <!-- header section -->
+    <div class="header">
+        <a href="index.html"><img src="./img/logo.png" class="logo" alt="logo"></a>
+    <nav>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="shop-cart"><a class="active" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+    </nav>
 
-        <div id="mobile">
-            <a href="cart.hltml"><i class="fa-solid fa-cart-shopping"></i></a>
-            <i id="bar" class="fa-solid fa-bars"></i>
-        </div>
+    <div id="mobile">
+        <a href="cart.hltml"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
     </div>
+</div>
     
     <!-- front-headline -->
     <section id="front-page">
@@ -36,7 +36,7 @@
     </section>
  
     <!-- cart section -->
-    <!-- <div id="cart" class="section-p1">
+    <div id="cart" class="section-p1">
         <table>
             <thead>
                 <tr>
@@ -52,37 +52,31 @@
             <tbody>
                 <tr>
                     <td><a href=""><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img id="cart-img" src="img/products/f1.jpg" alt=""></td>
-                    <td>Summer T-shirts</td>
+                    <td><img class="cart-img" src="img/products/cauli-flower.jpg" alt=""></td>
+                    <td>CauliFlower</td>
                     <td>Rs.1099</td>
                     <td><input type="number" value="2"></td>
                     <td>Rs.2198</td>
                 </tr>
                 <tr>
                     <td><a href=""><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img id="cart-img" src="img/products/f2.jpg" alt=""></td>
-                    <td>Summer T-shirts</td>
+                    <td><img class="cart-img" src="img/products/cow-milk.jpg" alt=""></td>
+                    <td>Milk</td>
                     <td>Rs.1099</td>
                     <td><input type="number" value="2"></td>
                     <td>Rs.2198</td>
                 </tr>
                 <tr>
                     <td><a href=""><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img id="cart-img" src="img/products/f3.jpg" alt=""></td>
-                    <td>Summer T-shirts</td>
+                    <td><img class="cart-img" src="img/products/oreo.jpg" alt=""></td>
+                    <td>Chocolate Cookie</td>
                     <td>Rs.1099</td>
                     <td><input type="number" value="2"></td>
                     <td>Rs.2198</td>
                 </tr>
             </table>
-        </table>
-    </div> -->
+    </div>
 
-    <!-- Cart Section -->
-    <section class="cart">
-        <h2>Shopping Cart</h2>
-        <div id="cart-items"></div>
-    </section>
 
     <!-- add and checkout -->
     <section id="cart-add" class="section-p1">
@@ -110,23 +104,10 @@
                     <td><strong>RS. 9099</strong></td>
                 </tr>
             </table>
-            <button class=" subtotal-btn">Proceed to Checkout</button>
+            <a href="checkout.html" class="subtotal-btn">Proceed to Checkout</a>
         </div>
     </section>
 
-    <section>
-        <h1>Shopping Cart</h1>
-        <div class="cart-info">
-          <p>Items in Cart: <span id="cart-count">0</span></p>
-        </div>
-    </section>
-    
-      <section class="cart-items">
-        <div class="cart-container section-p1">
-          <h2>Cart Items</h2>
-          <div id="cart-items"></div>
-        </div>
-      </section>
 
     <!-- Newsletter Section -->
     <section id="newsletter-section" class="section-p1">
@@ -134,16 +115,16 @@
             <h4>Sign Up for Newsletter</h4>
             <p>Get Updates about latest products and <span>Special Offers</span>.</p>
         </div>
-        <div class="form">
+        <form action="login.html" class="form">
             <input type="text" placeholder="Your Email Address">
-            <button class="normal">Sign Up</button>
-        </div>
+            <button type="submit" class="normal" >Sign Up</button>
+        </form>
     </section>
     
     <!-- footer section -->
     <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="./img/logo.png" alt="logo">
+            <a href="index.html"><img class="logo" src="./img/logo.png" alt="logo"></a> 
             <h4>Contact</h4>
             <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
             <p> <strong>Phone:</strong> 9863948660</p>
@@ -157,17 +138,17 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="termsCondtions.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View cart</a>
+            <a href="login.html">Sign In</a>
+            <a href="cart.html">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -181,8 +162,8 @@
                 <img src="img/pay/play.jpg" alt="googlePlay_store">
 
             </div>
-            <p>Secured Payment Gateways</p>  
-            <img src="img/pay/pay.png" alt="pamentmethonds">
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="payment methods">
         </div>
 
         <div class="copyright">

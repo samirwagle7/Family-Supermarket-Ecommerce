@@ -8,47 +8,46 @@
     <script src="https://kit.fontawesome.com/18e31dbed1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- !header section -->
-    <section class="header">
-        <a href="#"><img src="img/logo.png" class="logo" alt="logo"></a>
-        <nav>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="shop-cart"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-            </ul>
-        </nav>
+    <!-- header section -->
+    <div class="header">
+        <a href="index.html"><img src="./img/logo.png" class="logo" alt="logo"></a>
+    <nav>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="shop-cart"><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+    </nav>
 
-        <div id="mobile">
-            <a href="cart.hltml"><i class="fa-solid fa-cart-shopping"></i></a>
-            <i id="bar" class="fa-solid fa-bars"></i>
-        </div>
-        
-    </section>
+    <div id="mobile">
+        <a href="cart.hltml"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
+</div>
     <!-- Product Details Section-->
     <section id="pro-details" class="section-p1">
             <div class="single-pro-image">
-                <img src="img/products/f1.jpg" alt="product" id="main-img">
+                <img src="img/products/cauli-flower.jpg" alt="product" id="main-img">
                 
                 <div class="small-img-group">
                     <div class="small-img-col">
-                        <img src="img/products/f1.jpg" class="small-img" alt="product">
+                        <img src="img/products/broccoli.jpg" class="small-img" alt="product">
                     </div>
 
                     <div class="small-img-col">
-                        <img src="img/products/f2.jpg" class="small-img" alt="product">
+                        <img src="img/products/cauli-flower-gr.jpg" class="small-img" alt="product">
                     </div>
 
                     <div class="small-img-col">
-                        <img src="img/products/f3.jpg" class="small-img" alt="product">
+                        <img src="img/products/cauli-flower-purple.jpg" class="small-img" alt="product">
                     </div>
 
                     <div class="small-img-col">
-                        <img src="img/products/f4.jpg" class="small-img" alt="product">
+                        <img src="img/products/cauli-flower-yellow.jpg" class="small-img" alt="product">
                     </div>
 
                 </div>
@@ -57,41 +56,39 @@
             </div>
 
             <div class="single-pro-details">
-                <h6>Home / T-shirt</h6>
-                <h4>Men's Fashion T-shirts</h4>
+                <h6>Cauliflower</h6>
+                <h4>All Kinds</h4>
                 <h2>Rs. 1999</h2>
                 <select>
-                    <option>Screen Size</option>
-                    <option>XXL</option>
-                    <option>XL</option>
-                    <option>Large</option>
-                    <option>Medium</option>
-                    <option>Small</option>
+                    <option>KG</option>
+                    <option>Gram</option>
+                    <option>Lbs</option>
                 </select>
                 <input type="number" value="1">
-                <button onclick="addToCart('Gucci Summer Vibe T-Shirts', 1099, 'f1.jpg')">Add To Cart</button>
+                <button onclick="addToCart('Gucci Summer Vibe T-Shirts', 1999, 'f1.jpg')">Add To Cart</button>
                 <h4>Details</h4>
                 <p>
-                    Discover the ultimate summer shirt to beat the heat in style! Our collection offers a range of lightweight and breathable fabrics, perfect for those sunny days. Whether you prefer button-downs or relaxed tees, our shirts are designed for both comfort and fashion. Stay cool and fashionable this summer with our must-have shirt collection. Explore our website and find your perfect summer style today!
+                    Discover the ultimate cauliflower dish to satisfy your taste buds in style! Our collection offers a range of mouthwatering cauliflower recipes, perfect for those who love this versatile vegetable. Whether you prefer roasted cauliflower, cauliflower rice, or creamy cauliflower soup, our dishes are designed for both deliciousness and nutrition. Enjoy the goodness of cauliflower in different forms and flavors this season. Explore our website and find your perfect cauliflower recipe today!
                 </p>
             </div>
     </section>
+
     <!-- Newsletter Section -->
     <section id="newsletter-section" class="section-p1">
         <div class="newstext">
             <h4>Sign Up for Newsletter</h4>
             <p>Get Updates about latest products and <span>Special Offers</span>.</p>
         </div>
-        <div class="form">
+        <form action="login.html" class="form">
             <input type="text" placeholder="Your Email Address">
-            <button class="normal">Sign Up</button>
-        </div>
+            <button type="submit" class="normal" >Sign Up</button>
+        </form>
     </section>
-
+    
     <!-- footer section -->
     <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="img/logo.png" alt="logo">
+            <a href="index.html"><img class="logo" src="./img/logo.png" alt="logo"></a> 
             <h4>Contact</h4>
             <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
             <p> <strong>Phone:</strong> 9863948660</p>
@@ -105,17 +102,17 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="termsCondtions.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View cart</a>
+            <a href="login.html">Sign In</a>
+            <a href="cart.html">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -130,7 +127,7 @@
 
             </div>
             <p>Secured Payment Gateways</p>
-            <img src="img/pay/pay.png" alt="pamentmethonds">
+            <img src="img/pay/pay.png" alt="payment methods">
         </div>
 
         <div class="copyright">
