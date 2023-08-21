@@ -1,0 +1,11 @@
+tables
+
+User
+Product
+Customer
+Order
+
+<form name="" novalidate> in form tag using js
+form name is required no hyphen
+product form - enctype require enctype = "multipart/form-data"
+crud vanda agadi validation

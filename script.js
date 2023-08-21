@@ -33,8 +33,10 @@ smallImg[3].onclick = function(){
     mainImg.src = smallImg[3].src;
 }
 
+
+
+
 //payment page div selctor
-// Add this JavaScript code to your existing scripts or create a new script file.
 
 // Function to handle the selection of payment options
 function selectPaymentOption(option) {
