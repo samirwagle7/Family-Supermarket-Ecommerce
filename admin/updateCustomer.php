@@ -1,5 +1,5 @@
 <?php
-include 'dbconnect.php';
+include '../dbconnect.php';
 
 if (isset($_POST['update'])) {
    $user_id = $_POST['user_id'];
@@ -9,7 +9,7 @@ if (isset($_POST['update'])) {
 
    $update_query = "UPDATE `form` SET name = '$update_name', email = '$update_email', phone = '$update_phone' WHERE id = $user_id";
    mysqli_query($conn, $update_query) or die('update query failed');
-   header('location: customerDetails.php');
+   header('location: manageCustomer.php');
 }
 
 if (isset($_GET['id'])) {
@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
    $result = mysqli_query($conn, $select_query);
    $user_data = mysqli_fetch_assoc($result);
 } else {
-   header('location: customerDetails.php');
+   header('location: manageCustomer.php');
 }
 ?>
 

@@ -1,0 +1,84 @@
+
+      /* Fetching contact data | contactdata.php */
+      .contactdata-container {
+         margin: 20px auto;
+         width: 80%;
+         padding: 20px;
+         background-color: #f7f7f7;
+         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .contactdata-container h2 {
+         font-size: 24px;
+         margin-bottom: 20px;
+      }
+
+      .contactdata-container .con-usr-tbl {
+         width: 100%;
+         border-collapse: collapse;
+         background-color: #fff;
+         border: 1px solid #ccc;
+      }
+
+      .contactdata-container .con-usr-tbl th,
+      .contactdata-container .con-usr-tbl td {
+         padding: 10px;
+         text-align: left;
+      }
+
+      .contactdata-container .con-usr-tbl th {
+         background-color: #007bff;
+         color: #fff;
+      }
+
+      .contactdata-container .con-usr-tbl tr:nth-child(even) {
+         background-color:whitesmoke;
+      }
+
+      .contactdata-container .con-usr-tbl a {
+         color: #007bff;
+         text-decoration: none;
+      }
+
+      .contactdata-container .con-usr-tbl a:hover {
+         text-decoration: underline;
+      }
+
+      /* Contact form.PHP */
+      .contact-form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #656565;
+        border-radius: 5px;
+    }
+    .contact-form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    textarea {
+        resize: vertical;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #5b5b5b;
+    }

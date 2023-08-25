@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,7 @@
 <body>
     <!-- header section -->
     <div class="header">
-            <a href="index.html"><img src="./img/logo.png" class="logo" alt="logo"></a>
+            <a href="index.php"><img src="./img/logo.png" class="logo" alt="logo"></a>
         <nav>
             <ul id="navbar">
                 <li><a class="<?php echo ($activePage == 'home') ? 'active':''; ?>" href="index.php">Home</a></li>
@@ -18,8 +20,13 @@
                 <li><a class="<?php echo ($activePage == 'about') ? 'active':''; ?>" href="about.php">About</a></li>
                 <li><a class="<?php echo ($activePage == 'contact') ? 'active':''; ?>" href="contact.php">Contact</a></li>
                 <li id="shop-cart"><a class="<?php echo ($activePage == 'cart') ? 'active':''; ?>" href="./cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="login.php" class="login-btn"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                <li><a href="customer.php" class="login-btn"><i class="fa-solid fa-user"></i></a></li>
+                
+                <?php if (isset($_SESSION['customer_name'])) : ?>
+                <li>&nbsp;<?php echo $_SESSION['customer_name']; ?></li>
+                <?php endif; ?>
+                
+                <li><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a></li>
             </ul>
         </nav>
 
@@ -28,4 +35,6 @@
             <i id="bar" class="fa-solid fa-bars"></i>
         </div>
     </div>
+
+   
     

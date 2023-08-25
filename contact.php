@@ -3,6 +3,8 @@
     include "header.php";
 ?>
 
+
+
     <!-- contact details section  -->
     <section id="contact-details" class="section-p1 section-m1">
         <div class="details">
@@ -38,8 +40,8 @@
 
     <!-- form section -->
     <section id="form-section" class="section-p1 section-m1">
-        <form action="/action_page.php">
-            <span>LEAVE A MESSAGE</span>
+        <!-- <form action="/action_page.php">
+            <span>Contact Us</span>
             <H2>We love to hear your response <span>:)</span></H2>
             <div>
                 <input type="text" id="name" placeholder="Your Name" required>
@@ -54,8 +56,76 @@
                 <textarea id="message" cols="30"  placeholder="Your Message"></textarea>
             </div>
             <button>Submit</button>
-        </form>
+        </form> -->
+        <?php
+ // Start or resume the session
 
+include 'dbconnect.php';
+
+// Process form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $number = $_POST["number"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    // Sanitize inputs (you can use other validation techniques as well)
+    $name = mysqli_real_escape_string($conn, $name);
+    $email = mysqli_real_escape_string($conn, $email);
+    $number = mysqli_real_escape_string($conn, $number);
+    $subject = mysqli_real_escape_string($conn, $subject);
+    $message = mysqli_real_escape_string($conn, $message);
+
+    // Insert data into the database
+    $sql = "INSERT INTO contact_tbl (name, email, number, subject, message) VALUES ('$name', '$email', '$number', '$subject', '$message')";
+
+    if ($conn->query($sql) === TRUE) {
+        if (!isset($_SESSION['message_displayed'])) {
+            echo "Message sent successfully!";
+            $_SESSION['message_displayed'] = true; // Set session variable to prevent further display
+        }
+    } else {
+        echo "Error: Message didn't send";
+    }
+
+    // Close the database connection
+    $conn->close();
+}
+?>
+
+
+        <form action="#" method="post">
+            <div>
+                <!-- <label for="name">Name</label> -->
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div>
+                <!-- <label for="email">Email</label> -->
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+
+            <div>
+                <!-- <label for="email">Phone</label> -->
+                <input type="text" id="phone" name="number" placeholder="Your Number" required>
+            </div>
+
+            <div>
+                <!-- <label for="subject">Subject</label> -->
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+
+            <div>
+                <!-- <label for="message">Message</label> -->
+                <textarea id="message" name="message" rows="4" cols="30"  placeholder="Your Message" required></textarea>
+            </div>
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        
         <div class="person">
             <div class="emp-image">
                 <img src="./img/people/upw.jpg" alt="ceo">
@@ -99,13 +169,12 @@
     <!-- footer section -->
     <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="img/logo.png" alt="logo">
+            <a href="index.php"><img class="logo" src="./img/logo.png" alt="logo"></a> 
             <h4>Contact</h4>
             <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
             <p> <strong>Phone:</strong> 9863948660</p>
             <p> <strong>Hours:</strong> 10:00 - 17:00, Sun - Fri</p>
             <div class="follow">
-                <h4>Follow Us:</h4>
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-twitter"></i>
@@ -114,17 +183,17 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.php">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="termsCondtions.php">Terms & Conditions</a>
+            <a href="contact.php">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View cart</a>
+            <a href="login.php">Sign In</a>
+            <a href="cart.php">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -139,7 +208,7 @@
 
             </div>
             <p>Secured Payment Gateways</p>
-            <img src="img/pay/pay.png" alt="pamentmethonds">
+            <img src="img/pay/pay.png" alt="payment methods">
         </div>
 
         <div class="copyright">

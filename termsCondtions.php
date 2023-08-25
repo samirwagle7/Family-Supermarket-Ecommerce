@@ -87,7 +87,7 @@
         </div>
 
         <div class="copyright">
-            <p>Copyright © 2023, Samir Wagle - All Rights Reserved</p>
+            <p>Copyright © 2023, Family Supermarket - All Rights Reserved</p>
         </div>
     </footer>
 

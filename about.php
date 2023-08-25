@@ -6,14 +6,14 @@
     <!-- front-headline -->
     <section id="front-page" class="about-page">
         <h2>#About Us</h2>
-        <p>Know more... #about the Samir Wagle's Grocery Store</p>
+        <p>Know more... #about the Family Supermarket's Grocery Store</p>
     </section>
     
     <section id="about-front" class="section-p1 section-m1">
         <img src="img/about/gro-ani.jpg" alt="banner">
         <div>
             <h2>Who We are?</h2>
-            <p class="section-p1">At Samir Wagle's Grocery Store, we are dedicated to providing the finest selection of fresh and high-quality groceries to our valued customers. With a commitment to excellence, we strive to offer a diverse range of products and ensure a seamless shopping experience. Trust us for all your grocery needs and experience convenience and satisfaction like never before.</p>
+            <p class="section-p1">At Family Supermarket's Grocery Store, we are dedicated to providing the finest selection of fresh and high-quality groceries to our valued customers. With a commitment to excellence, we strive to offer a diverse range of products and ensure a seamless shopping experience. Trust us for all your grocery needs and experience convenience and satisfaction like never before.</p>
             <!-- <abbr title="">We provide you the Best quality with Most valueabe products</abbr> -->
             
         </div>
@@ -54,7 +54,7 @@
     <!-- footer section -->
     <footer class="section-p1">
         <div class="col">
-            <a href="index.html"><img class="logo" src="./img/logo.png" alt="logo"></a> 
+            <a href="index.php"><img class="logo" src="./img/logo.png" alt="logo"></a> 
             <h4>Contact</h4>
             <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
             <p> <strong>Phone:</strong> 9863948660</p>
@@ -68,17 +68,17 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="about.html">About Us</a>
+            <a href="about.php">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
-            <a href="termsCondtions.html">Terms & Conditions</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="termsCondtions.php">Terms & Conditions</a>
+            <a href="contact.php">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="login.html">Sign In</a>
-            <a href="cart.html">View cart</a>
+            <a href="login.php">Sign In</a>
+            <a href="cart.php">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -97,7 +97,7 @@
         </div>
 
         <div class="copyright">
-            <p>Copyright © 2023, Samir Wagle - All Rights Reserved</p>
+            <p>Copyright © 2023, Family Supermarket - All Rights Reserved</p>
         </div>
     </footer>
 

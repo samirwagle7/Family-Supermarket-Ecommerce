@@ -206,7 +206,7 @@
         <div class="banner-box">
             <h4>Crazy Deals</h4>
             <h2>Buy 1 Get 1 Free</h2>
-            <span>The Fresh and best is on sale at SamirWagle</span>
+            <span>The Fresh and best is on sale at Family Supermarket</span>
             <button>Learn More</button>
         </div>
 
@@ -237,10 +237,10 @@
     </section>
 
     
-    <!-- footer section -->
-    <footer class="section-p1">
+   <!-- footer section -->
+   <footer class="section-p1">
         <div class="col">
-            <a href="index.html"><img class="logo" src="./img/logo.png" alt="logo"></a> 
+            <a href="index.php"><img class="logo" src="./img/logo.png" alt="logo"></a> 
             <h4>Contact</h4>
             <p> <strong>Address:</strong> Chandragiri - 2, Kathmandu, Nepal, 44600 </p>
             <p> <strong>Phone:</strong> 9863948660</p>
@@ -254,17 +254,17 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="about.html">About Us</a>
+            <a href="about.php">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
-            <a href="termsCondtions.html">Terms & Conditions</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="termsCondtions.php">Terms & Conditions</a>
+            <a href="contact.php">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="login.html">Sign In</a>
-            <a href="cart.html">View cart</a>
+            <a href="login.php">Sign In</a>
+            <a href="cart.php">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -283,7 +283,7 @@
         </div>
 
         <div class="copyright">
-            <p>Copyright © 2023, Samir Wagle - All Rights Reserved</p>
+            <p>Copyright © 2023, Family Supermarket - All Rights Reserved</p>
         </div>
     </footer>
 

@@ -1,8 +1,7 @@
 
-
 <?php
     require "../dbconnect.php";
-    
+    session_start();
     $statusMsg = "";
 // Handle form submission
 // if ($_SERVER["REQUEST_METHOD"] == "POST") // add <?php echo $_SERVER['PHP_SELF']; in form action if req meth is used
@@ -139,22 +138,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="sidebar">
                 <figure>
                     <img src="./img/people/upw.jpg" alt="admin">
-                    <figcaption>Samir Wagle</figcaption>
+                    <figcaption><?php echo $_SESSION['admin_name']; ?> </figcaption>
                 </figure>
                 <nav>
                     <ul>
                         <li><a href="admin.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                        <li><a href="#"><i class="fas fa-box-open"></i> Product Management</a></li>
+                        <li><a href="manageProducts.php"><i class="fas fa-box-open"></i> Product Management</a></li>
                         <li><a class="active" href="#"><i class="fas fa-tags"></i>Add Product</a></li>
                         <li><a href="#"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
                         <li><a href="#"><i class="fas fa-credit-card"></i> Payment Option Management</a></li>
                         <li><a href="#"><i class="fas fa-file"></i> Page Management</a></li>
-                        <li><a href="#"><i class="fas fa-users"></i> User Management</a></li>
+                        <li><a href="manageCustomer.php"><i class="fas fa-users"></i>Customer Management</a></li>
+                
                     </ul>
                 </nav>
                 <div class="setting">
-                    <button><i class="fa-solid fa-gear"></i>Setting</button>
-                    <button><i class="fa-solid fa-right-from-bracket"></i>Log Out</button>
+                    <a><i class="fa-solid fa-gear"></i>Setting</a>
+                    <a href="adminLogout.php"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
                 </div>
             </div>
         </div>

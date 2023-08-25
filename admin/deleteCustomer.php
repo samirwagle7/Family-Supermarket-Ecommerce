@@ -1,5 +1,5 @@
 <?php
-include 'dbconnect.php';
+include '../dbconnect.php';
 
 if(isset($_GET['id'])){
    $user_id = $_GET['id'];
@@ -7,10 +7,10 @@ if(isset($_GET['id'])){
    $deleter_res = mysqli_query($conn, $delete_query) or die('delete query failed');
    if($delete_res) {
     echo "Product Deleted Successfully.";
-    header('location: customerDetails.php');
+    header('location: manageCustomer.php');
 } else {
     echo "Product Deletion Failed.";
-    header('location: customerDetails.php');
+    header('location: manageCustomer.php');
 }
  
 } 

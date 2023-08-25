@@ -6,7 +6,7 @@
     font-family: 'League Spartan', sans-serif;
 }
 
-/* Register Form,  */
+/* Register Form login form,  */
 
 .form-main-container {
     display: flex;
@@ -34,7 +34,7 @@
     color: #333;
   }
 
-  .form-container   .message {
+  .form-container .message {
     background-color: #ffcfcf;
     padding: 8px;
     border-radius: 5px;
@@ -82,7 +82,7 @@
   }
 
   
-.container{
+/* .container{
    min-height: 100vh;
    background-color: var(--light-bg);
    display: flex;
@@ -93,8 +93,8 @@
 
 .container .profile{
    padding:20px;
-   background-color: var(--white);
-   box-shadow: var(--box-shadow);
+   background-color: ;
+   box-shadow: ;
    text-align: center;
    width: 400px;
    border-radius: 5px;
@@ -126,7 +126,9 @@
 
 .container .profile p a:hover{
    text-decoration: underline;
-}
+} */
+
+
 
 .update-profile{
    min-height: 100vh;
@@ -184,19 +186,21 @@
    margin-top: 10px;
 }
 
+ /* Manage Customer.html */
 /* Customer Details */
 .cd-container {
     margin: 20px auto;
-    width: 80%;
+    width: 100%;
     padding: 20px;
     background-color: #f7f7f7;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
  }
 
-.cd-container h2 {
+/* .cd-container h2 {
     font-size: 24px;
     margin-bottom: 20px;
- }
+    text-align: center;
+ } */
 
 .cd-container .user-table {
     width: 100%;

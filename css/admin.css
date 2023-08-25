@@ -10,7 +10,7 @@
 
 
 .add-pro-form {
-    width: 100%;
+    width: 50%;
     padding: 20px;
     background-color: #f8f8f8;
     border-radius: 10px;
@@ -60,27 +60,45 @@
 
 /* Manage product.HTML */
 #mng-pro-img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
 }
 
 .mng-pro table {
     border-collapse: collapse;
+    border: none;
     width: 100%;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .mng-pro thead th {
-    background-color: #f2f2f2;
+    background-color: #007bff;
+    color: #fff;
     font-weight: bold;
+    border-bottom: 1px solid #ccc;
+   
 }
 
 .mng-pro th, td {
     padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.mng-pro td:nth-child(1) {
+    width: 50px;
+}
+.mng-pro td:nth-child(2) {
+    width: 120px;
+}
+.mng-pro td:nth-child(5) {
+    width: 80px;
+}
+.mng-pro td:nth-child(7) {
+    width: 100px;
 }
 
 .mng-pro tr:hover {
@@ -94,6 +112,38 @@
 }
 
 .mng-pro a:hover {
-    color: #3c00e0;
+    color: #1a63b5;
     text-decoration: underline;
 }
+
+ /* recent customer table */
+ .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ccc;
+ }
+
+ .user-table th,
+ .user-table td {
+    padding: 10px;
+    text-align: left;
+ }
+
+ .user-table th {
+    background-color: #007bff;
+    color: #fff;
+ }
+
+ .user-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+ }
+
+ .user-table a {
+    color: #007bff;
+    text-decoration: none;
+ }
+
+ .user-table a:hover {
+    text-decoration: underline;
+ }

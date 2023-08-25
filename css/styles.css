@@ -47,10 +47,14 @@ p {
 body {
     width: 100%;
 }
-
 .logo {
     height: 50px;
-    width: 180px;
+    width: 100px;
+}
+.logo img {
+    height: 50px;
+    width: 100px;
+    object-fit: cover;
 }
 
 
@@ -158,8 +162,7 @@ footer .col {
 }
 
 footer .logo {
-    width: 180px;
-    height: 50px;
+    
     margin-bottom: 50px;
 }
 
@@ -471,7 +474,7 @@ footer .copyright {
 }
 
 
-/* front headline for product.html and about.html page  */
+/* front headline for product.PHP and about.PHP page  */
 .products .product {
     width: 23%;
     min-width: 250px;
@@ -534,7 +537,7 @@ footer .copyright {
     font-size: 18px;
 }
 
-/* Product.HTML page */
+/* Product.PHP page */
 /* product page */
 #front-page {
     background-image: url("../img/banner/b1.jpg");
@@ -572,7 +575,7 @@ footer .copyright {
     color: #ffffff;
 }
 
-/* Single Prouct.HTML page */
+/* Single Prouct.PHP page */
 
 #pro-details {
     display: flex;
@@ -605,6 +608,9 @@ footer .copyright {
     padding-top: 30px;
 }
 
+#pro-details .single-pro-details h3 {
+    font-size: 30px;
+}
 #pro-details .single-pro-details h4 {
     padding: 40px 0 20px 0;
 }
@@ -653,7 +659,7 @@ footer .copyright {
         
 }
 
-/* Contact.HTML page  */
+/* Contact.PHP page  */
 #contact-details {
     display: flex;
     align-items: center;
@@ -797,7 +803,7 @@ footer .copyright {
      font-weight: 700;
  } 
 
-/* About.HTML page */
+/* About.PHP page */
 #front-page.about-page {
     background-image: url("../img/banner/b2.jpg"); /* change the bg-img from product page header image*/
 }
@@ -827,150 +833,82 @@ footer .copyright {
     line-height: 30px;
 }
 
-/* Cart.HTML page */
+/* Cart.PHP page */
+/* CSS for the cart section */
 #cart {
-    overflow-x: auto;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    
 }
 
-#cart table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    white-space: nowrap;
-}
-
-#cart table img {
-    width: 70px;
-}
-
-#cart table td:nth-child(1) {
+#cart img {
     width: 100px;
-    text-align: center;
+    height: 100px;
+    object-fit: cover;
 }
-
-#cart table td:nth-child(2) {
-    width: 150px;
-    text-align: center;
+#cart .itemQty {
+    width: 75px;
+    height: 20px;
 }
-
-#cart table td:nth-child(3) {
-    width: 250px;
-    text-align: center;
-}
-
-#cart table td:nth-child(4),
-#cart table td:nth-child(5),
-#cart table td:nth-child(6) {
-    width: 150px;
-    text-align: center;
-}
-
-#cart table td:nth-child(5) input {
-    width: 70px;
-    padding: 10px 5px 10px 15px;
-}
-
-#cart table thead {
-    border: 1px solid #444444;
-    border-left: none;
-    border-right: none;
-}
-
-#cart table thead td {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 13px;
-    padding: 18px 0;
-}
-
-#cart table tbody tr td {
-    padding-top: 15px;
-}
-
-#cart table tbody tr {
-    font-size: 13px;
-}
-
-#cart-add {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-}
-
-#coupon {
-    flex: 1;
-    margin-bottom: 15px;
-}
-
-#coupon h3,
-#sub-total h3 {
-    margin-bottom: 15px;
-}
-
-#coupon input {
-    padding: 10px 20px;
-    outline: none;
-    width: 60%;
-    margin-right: 10px;
-    border: 1px solid #e2e2e2;
-}
-
-#coupon .apply-btn {
-    padding: 10px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #1a63b5;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#coupon .apply-btn:hover {
-    background-color: #10437e;
-    color: white;
-}
-
-#sub-total {
-    flex: 1;
-    margin-bottom: 30px;
-    border: 1px solid #e2e2e2;
-    padding: 30px;
-    text-align: center;
-}
-
-#sub-total table {
-    margin: auto;
-    width: 50%;
+#cart table {
     border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-#sub-total table td {
-    width: 50%;
-    border: 1px solid #e2e2e2;
-    padding: 10px;
-    font-size: 13px;
-}
-
-#sub-total .subtotal-btn {
-    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
-    background-color: #1a63b5;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#cart thead th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+   
+}
+#cart th a {
     text-decoration: none;
+    color: #fff;
+}
+#cart .text-danger {
+    color: #333;
+}
+#cart th, td {
+    padding: 10px;
+    border-bottom: 1px solid #bbbbbb;
+    color: #333;
+    
 }
 
-#sub-total .subtotal-btn:hover {
-    color: white;
-    outline: none;
-    background-color: #10437e;
+ #cart td:nth-child(1) {
+    max-width: 10px;
+}
+#cart td:nth-child(2) {
+    max-width: 150px;
+}
+/* #cart td:nth-child(3) {
+    max-width: 300px;
+} */
+#cart td:nth-child(4) {
+    max-width: 100px;
+}
+#cart td:nth-child(5) {
+    max-width: 100px;
+}
+#cart td:nth-child(6) {
+    max-width: 100px;
+} 
+
+#cart tr:hover {
+    background-color: #f5f5f5;
 }
 
-/* Thankyou.HTML page */
+
+
+/* Thankyou.PHP page */
 .thank-you-container{
     display: flex;
     justify-content: center;
@@ -1022,8 +960,7 @@ footer .copyright {
     background-color: #0056b3;
 }
 
-
-/* login.HTML page */
+/* login.PHP page */
 .login-portal {
     display: flex;
     justify-content: center;
@@ -1060,6 +997,7 @@ footer .copyright {
 .login-form-group {
     margin-bottom: 30px;
 }
+
 .reg-form-group {
     width: 100%;
     margin-bottom: 30px;
@@ -1067,6 +1005,7 @@ footer .copyright {
     flex-direction: row;
     justify-content: space-between;
 }
+
 .login-form-label {
     font-size: 18px;
     color: #333;
@@ -1169,7 +1108,7 @@ footer .copyright {
     opacity: 0.8;
 }
 
-/* register.HTML page */
+/* register.PHP page */
 
 
 /*Checkout Payment Details Section */
@@ -1235,8 +1174,106 @@ footer .copyright {
     background-color: #0056b3;
 }
 
+/* checkout.php */
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #order {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  #order h4 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+  }
+  
+  #order .jumbotron {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #order .jumbotron h6 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  #order .jumbotron h5 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #2980b9;
+  }
+  
+  #order form .input-group {
+    margin-bottom: 15px;
+  }
+  
+  #order form input[type="text"],
+  #order form input[type="email"],
+  #order form input[type="tel"],
+  #order form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #order form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  #order form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #2980b9;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #order form input[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  #order p {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  #order a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  #order a:hover {
+    text-decoration: underline;
+  }
+  
 
-/* termsCondtion.HTML page */
+/* termsCondtion.PHP page */
 .terms-and-conditions {
     background-color: #f9f9f9;
     padding: 20px;
@@ -1285,11 +1322,13 @@ footer .copyright {
 }
 
 .left-dash-sec {
-    width: 75%;
+    width: 80%;
+    
 }
 
 .right-dash-sec {
-    width: 25%;
+    width: 20%;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.1);
     
 }
 
@@ -1299,16 +1338,18 @@ footer .copyright {
     display: inline-block;
     padding: 0 20px;
     border-radius: 50px;
+    
 }
 
 .sidebar {
-    background-color: #1a63b5;
+    background-color: #1780e3;
     height: 100vh;
     color: #fff;
     padding-top: 40px;
     position: relative;
     display: flex;
     flex-direction: column;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar nav {
@@ -1366,7 +1407,7 @@ footer .copyright {
     align-items: center;
     margin-bottom: 30px;
 }
-.setting button {
+.setting a {
         color: #1a63b5;
         font-size: 18px;
         background-color: #ffffff;
@@ -1375,17 +1416,17 @@ footer .copyright {
         outline: none;
         cursor: pointer;
         padding: 8px 15px;
+        text-decoration: none;
         
         
     }
 
-    .setting button i {
+    .setting a i {
         margin-right: 8px;
     }
 
-    .setting button:hover {
-        background-color: #fff;
-        color: #1a63b5;
+    .setting a :hover {
+        transform: translatey(5px);
     }
 
 .recent-order {
@@ -1421,41 +1462,11 @@ footer .copyright {
     background-color: #004395;
 }
 
-/* recent customer table */
- .user-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    border: 1px solid #ccc;
- }
 
- .user-table th,
- .user-table td {
-    padding: 10px;
-    text-align: left;
- }
-
- .user-table th {
-    background-color: #007bff;
-    color: #fff;
- }
-
- .user-table tr:nth-child(even) {
-    background-color: #f2f2f2;
- }
-
- .user-table a {
-    color: #007bff;
-    text-decoration: none;
- }
-
- .user-table a:hover {
-    text-decoration: underline;
- }
 /* Customer Dashboard page */
  
 
-/* payment.html */
+/* payment.PHP */
 .pay-container {
     display: flex;
     align-items: center;
@@ -1682,7 +1693,7 @@ footer .copyright {
     #coupon .apply {
         width: 100%;
     }
-    /* checkout page, payment.html */
+    /* checkout page, payment.PHP */
     
     .checkout-container {
         height: 100vh; /* 100% of the viewport height */
@@ -1827,7 +1838,7 @@ footer .copyright {
         width: 100%;
     }
 
-    /* checkout page, payment.html */
+    /* checkout page, payment.PHP */
     .checkout-container {
         height: auto;
     }
