@@ -30,18 +30,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         VALUES ('$product_name', $price, $quantity, '$fileName', '$description')";
                 
                 if ($conn->query($sql) === TRUE) {
-                    $statusMsg = "New Product created successfully";
+                    echo '<script>alert("New Product created successfully");</script>';
                 } else {
-                    $statusMsg = "Error: Failed to add product";
+                    echo '<script>alert("Error: Failed to add product");</script>';
                 }
             } else {
-                $statusMsg = "Sorry, there was an error uploading your file.";
+                echo '<script>alert("Sorry, there was an error uploading your file.");</script>';
             }
         } else {
-            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.';
+            echo '<script>alert("Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.");</script>';
         }
     } else {
-        $statusMsg = 'Please select a file to upload.';
+        echo '<script>alert("Please select a file to upload.");</script>';
     }
 }    
 
@@ -55,20 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Insert Product</title>
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-  
-
-</body>
-</html> -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,10 +109,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="add-pro-group">
                             <input type="submit" class="add-pro-submit" value="Submit" name="submit">
                         </div>
-
-                        <div class="status-msg">
-                        <?php echo $statusMsg; ?>
-                    </div>
                     </form>
                     
                 </div>
@@ -145,10 +127,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li><a href="admin.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                         <li><a href="manageProducts.php"><i class="fas fa-box-open"></i> Product Management</a></li>
                         <li><a class="active" href="#"><i class="fas fa-tags"></i>Add Product</a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
+                        <li><a href="orders.php"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
                         <li><a href="#"><i class="fas fa-credit-card"></i> Payment Option Management</a></li>
                         <li><a href="#"><i class="fas fa-file"></i> Page Management</a></li>
                         <li><a href="manageCustomer.php"><i class="fas fa-users"></i>Customer Management</a></li>
+                        <li><a href="#"><i class="fas fa-message"></i>Contact Message</a></li>
                 
                     </ul>
                 </nav>

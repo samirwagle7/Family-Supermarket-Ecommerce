@@ -45,10 +45,10 @@
     
 
     <!-- Product Section-->
-    <section class="products">
+    <section class="products section-p1">
         <h2>Grocery Items</h2>
         <p>Fresh and Healthy Products</p>
-        <div class="pro-container section-p1">
+        <div class="pro-container">
             <div class="product">
                 <img src="img/products/red-onion.jpg" alt="">
                 <div class="description">
@@ -127,10 +127,10 @@
     </section>
 
     <!-- New Arrival Section / Same as product-->
-    <section class="products">
+    <section class="products section-p1">
         <h2>New Arrivals</h2>
         <p>Grab Our Latest and Fresh Products Now</p>
-        <div class="pro-container section-p1">
+        <div class="pro-container">
             <div class="product">
                 <img src="img/products/white-onion.jpg" alt="">
                 <div class="description">

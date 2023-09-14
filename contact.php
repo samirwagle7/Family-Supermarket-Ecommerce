@@ -64,6 +64,7 @@ include 'dbconnect.php';
 
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
     $name = $_POST["name"];
     $email = $_POST["email"];
     $number = $_POST["number"];
@@ -77,16 +78,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = mysqli_real_escape_string($conn, $subject);
     $message = mysqli_real_escape_string($conn, $message);
 
+    
     // Insert data into the database
     $sql = "INSERT INTO contact_tbl (name, email, number, subject, message) VALUES ('$name', '$email', '$number', '$subject', '$message')";
 
     if ($conn->query($sql) === TRUE) {
         if (!isset($_SESSION['message_displayed'])) {
-            echo "Message sent successfully!";
+            echo "<script>alert('Message sent successfully!');</script>";
             $_SESSION['message_displayed'] = true; // Set session variable to prevent further display
         }
     } else {
-        echo "Error: Message didn't send";
+        echo "<script>alert('Error: Message didn't send');</script>";
     }
 
     // Close the database connection

@@ -1,7 +1,7 @@
 <?php 
     $activePage = '';
     include "header.php"; 
-    session_start();
+    // session_start(); // already in header.php
 ?>
 <?php
     include 'dbconnect.php';
@@ -26,19 +26,78 @@ if(isset($_SESSION['customer_id'])) {
 <section id="dashboard">
     <div class="left-dash-sec section-p1">
         <h2>Welcome <?php echo $customerData['name'] ?></h2>
-    </div>
+        <div class="recent-order">
+                <div class="order-head">
+                    <h3>Recent Orders</h3>
+                    <button onclick="allOrders.php">View All</button>
+                </div>
+                    <!-- Display data in a table -->
+                <div class="container">
+                    <!-- Display data in a table -->
+                    <table class="user-table">
+                        <tr>
+                            <th>Order</th>
+                            <th>Product Name(Quantity)</th>
+                            
+                            <th>Total Amount</th>
+                        </tr>
+                        <?php
+                        
 
-    <div class="right-dash-sec">
+                        // Fetch data from the orders table
+                        $sql = "SELECT * FROM orders WHERE customer_id = '$customer_id' LIMIT 5";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            $counter = 1; // Initialize a counter for serial numbers
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $products = $row['products'];
+                                
+                                $totalAmount = $row['paid_amount'];
+
+                                // Output the data in a table row
+                                echo '<tr>';
+                                echo '<td>' . $counter . '</td>';
+                                echo '<td>' . $products . '</td>';
+                                echo '<td>' . $totalAmount . '</td>';
+                                echo '</tr>';
+
+                                $counter++; // Increment the counter for the next row
+                            }
+                        } else {
+                            echo '<tr><td colspan="4">No recent orders found.</td></tr>';
+                        }
+
+                        // Count the number of orders
+                        $totalOrders = mysqli_num_rows($result);
+                        // Close the database connection when done
+                        mysqli_close($conn);
+                        ?>
+                    </table>
+                </div>
+            </div>
+            <!-- Total Details -->
+            <div class="total-details-con">
+                <div class="total-details">
+                    <p><?php echo "$totalOrders" ?></p>
+                    <h3>Total Orders</h3>
+                </div>
+            </div> 
+    </div>
+    
+
+    <div class="right-dash-sec-customer">
         <div class="sidebar">
-            <figure>
-                <img src="./img/people/upw.jpg" alt="customer">
-                <figcaption><?php echo $customerData['name'] ?></figcaption>
-            </figure>
+            <div class='name'>
+                <span>Username</span>
+                <h3><?php echo $customerData['name'] ?></h3>
+            </div>
             <nav>
                 <ul>
-                    <li><a class="active" href="customer.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a class="active" href="customer.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                     <li><a href="#"><i class="fas fa-user-cog"></i> Management Account</a></li>
-                    <li><a href="#"><i class="fas fa-box-open"></i> Order Product's List</a></li>
+                    <li><a href="allOrders.php"><i class="fas fa-box-open"></i> Order Product's List</a></li>
                     <li><a href="#"><i class="fas fa-shopping-cart"></i> Return and Cancellation</a></li>
                     <li><a href="#"><i class="fas fa-credit-card"></i> Purchase History</a></li>
                     <li><a href="#"><i class="fas fa-heart"></i> Favourites</a></li>
@@ -52,7 +111,7 @@ if(isset($_SESSION['customer_id'])) {
         </div>
     </div>
 </section>
-
+                        
 <!-- Newsletter Section -->
 <!-- <section id="newsletter-section" class="section-p1">
     <div class="newstext">
@@ -111,7 +170,7 @@ if(isset($_SESSION['customer_id'])) {
         </div>
 
         <div class="copyright">
-            <p>Copyright © 2023, Samir Wagle - All Rights Reserved</p>
+            <p>Copyright © 2023, Family Supermarket - All Rights Reserved</p>
         </div>
     </footer>
 

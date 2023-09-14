@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Order Confirmation</title>
+			<style>
+				/* CSS for the Thank You message */
+				.order-success-text {
+                    height: 80vh; 
+                    width: 50vw; 
+					text-align: center;
+					margin: 0 auto;
+					padding: 20px;
+					background-color: #f7f7f7;
+					border-radius: 10px;
+					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				}
+		
+				.order-success-text h1 {
+					font-size: 2.5rem;
+					color: #dc3545;
+					margin-top: 1rem;
+				}
+		
+				.order-success-text h2 {
+					font-size: 2rem;
+					color: #28a745;
+					margin-top: 1rem;
+				}
+		
+				.order-success-text h4 {
+					font-size: 1.25rem;
+					color: #343a40;
+					background-color: #f2f2f2;
+					padding: 10px;
+					border-radius: 5px;
+					margin-top: 1rem;
+				}
+		
+				/* CSS for the Thank You button container */
+				.thankyou-button {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 10px;
+					margin-top: 20px;
+				}
+		
+				.thankyou-button a {
+					display: inline-block;
+					padding: 10px 20px;
+					background-color: #007bff;
+					color: #fff;
+					border-radius: 5px;
+					text-decoration: none;
+					font-weight: bold;
+					transition: background-color 0.3s;
+				}
+		
+				.thankyou-button a:hover {
+					background-color: #0056b3;
+				}
+			</style>
+		</head>
+		<body>
+			<div class="order-success-text">
+				<h1 class="display-4 mt-2 text-danger">Thank You!</h1>
+				<h2 class="text-success">Your Order Placed Successfully!</h2>
+				<h4 class="bg-danger text-light rounded p-2">Items Purchased: <?= $products ?></h4>
+				<h4>Your Name : ' . $name . '</h4>
+				<h4>Your E-mail : ' . $email . '</h4>
+				<h4>Your Phone : ' . $phone . '</h4>
+				<h4>Total Amount Paid : ' . number_format($grand_total, 2) . '</h4>
+				<h4>Payment Mode : ' . $pmode . '</h4>
+				<div class="thankyou-button">
+					<a href="products.php"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping</a>
+					<a href="customer.php"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Profile</a>
+				</div>
+			</div>
+		</body>
+		</html>

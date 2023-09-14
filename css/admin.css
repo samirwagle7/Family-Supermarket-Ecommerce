@@ -1,3 +1,61 @@
+/* update Customer.php */
+.upd-form-main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.upd-form-container {
+    width: 70%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.upd-form-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-group input[type="text"].qty {
+    width: 50px;
+}
+
+.input-group input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.input-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
 
 /* Add-Pro Form Container */
 .add-pro-container {
@@ -147,3 +205,167 @@
  .user-table a:hover {
     text-decoration: underline;
  }
+ /* Media Query for max-width: 915px */
+@media screen and (max-width: 915px) {
+    /* Responsive table styles */
+    table {
+        width: 100%;
+    }
+    
+    thead {
+        display: none;
+    }
+    
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    
+    tbody td {
+        display: block;
+        text-align: center;
+    }
+    
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align: center;
+    }
+
+    /* Additional responsive adjustments */
+    .upd-form-container,
+    .add-pro-form,
+    .mng-pro table,
+    .user-table {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .upd-form-container h3,
+    .add-pro-container h3,
+    .mng-pro thead th,
+    .mng-pro th,
+    .mng-pro td {
+        font-size: 16px;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="email"],
+    .add-pro-input {
+        font-size: 12px;
+    }
+
+    /* You can add more responsive adjustments here */
+}
+
+.generate-pdf {
+        
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 40px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #fff;
+        background-color: #007bff; /* Blue color */
+        transition: background-color 0.3s ease;
+}
+
+/* admin dashborad total details */
+.total-details-con {
+    display: flex;
+    justify-content: space-between;
+}
+.total-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #efefef;
+    padding: 20px;
+    /* border: 0.2px solid #ccc; */
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 220px;
+    height: 120px;
+    margin-top: 60px;
+  }
+
+  .total-details p {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+  }
+
+  .total-details h3 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+ /* Media Query for max-width: 600px */
+@media screen and (max-width: 600px) {
+    /* Responsive table styles */
+    table {
+        width: 100%;
+    }
+    
+    thead {
+        display: none;
+    }
+    
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    
+    tbody td {
+        display: block;
+        text-align: center;
+    }
+    
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align: center;
+    }
+
+    /* Additional responsive adjustments */
+    .upd-form-container,
+    .add-pro-form,
+    .mng-pro table,
+    .user-table {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .upd-form-container h3,
+    .add-pro-container h3,
+    .mng-pro thead th,
+    .mng-pro th,
+    .mng-pro td {
+        font-size: 14px;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="email"],
+    .add-pro-input {
+        font-size: 10px;
+    }
+
+    /* You can add more responsive adjustments here */
+}

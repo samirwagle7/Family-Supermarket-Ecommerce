@@ -51,12 +51,19 @@
                                         <td><img src="./uploads/<?php echo $product['image']; ?>" alt="pro-image" id="mng-pro-img"></td>
                                         <td>
                                             <a href="update.php?product_id=<?php echo $product['product_id']; ?>" title="Edit">Edit</a>
-                                            <a href="delete.php?product_id=<?php echo $product['product_id']; ?>" title="Delete">Delete</a>
+                                            <a href="delete.php?product_id=<?php echo $product['product_id']; ?>" title="Delete" onclick="return confirmDelete();">Delete</a>
+                                                <!-- js for aleret msg -->
+                                                <script> 
+                                                function confirmDelete() {
+                                                    return confirm("Are you sure you want to delete this product?");
+                                                }
+                                                </script>
                                         </td>
                                     </tr>
                                     <?php $i++; endwhile; ?>  
                             </tbody>
                         </table>
+                        <button class='generate-pdf' onclick="window.location.href='mngProReport.php'">Generate PDF Report</button>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -75,10 +82,11 @@
                         <li><a href="admin.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                         <li><a class="active" href="manageProducts.php"><i class="fas fa-box-open"></i> Product Management</a></li>
                         <li><a href="addProduct.php"><i class="fas fa-tags"></i>Add Products</a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
+                        <li><a href="orders.php"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
                         <li><a href="#"><i class="fas fa-credit-card"></i> Payment Option Management</a></li>
                         <li><a href="#"><i class="fas fa-file"></i> Page Management</a></li>
                         <li><a href="manageCustomer.php"><i class="fas fa-users"></i> User Management</a></li>
+                        <li><a href="../contact/contactdata.php"><i class="fas fa-message"></i>Contact Message</a></li>
                     </ul>
                 </nav>
                 <div class="setting">

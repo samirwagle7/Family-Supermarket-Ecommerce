@@ -46,7 +46,7 @@ $select = mysqli_query($conn, "SELECT * FROM `form`") or die('query failed');
                             echo '<td>' . $row['phone'] . '</td>';
                         
                         
-                            echo '<td><a href="../updateCustomer.php?id=' . $row['id'] . '">Update</a> | <a href="deleteCustomer.php?id=' . $row['id'] . '">Remove</a></td>';
+                            echo '<td><a href="updateCustomer.php?id=' . $row['id'] . '">Update</a> | <a href="deleteCustomer.php?id=' . $row['id'] . '">Remove</a></td>';
                             echo '</tr>';
                         }
                     ?>
@@ -66,10 +66,11 @@ $select = mysqli_query($conn, "SELECT * FROM `form`") or die('query failed');
                         <li><a href="admin.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                         <li><a href="manageProducts.php"><i class="fas fa-box-open"></i> Product Management</a></li>
                         <li><a href="addProduct.php"><i class="fas fa-tags"></i>Add Products</a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
+                        <li><a href="orders.php"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
                         <li><a href="#"><i class="fas fa-credit-card"></i> Payment Option Management</a></li>
                         <li><a href="#"><i class="fas fa-file"></i> Page Management</a></li>
                         <li><a class="active" href="manageCustomer.php"><i class="fas fa-users"></i> Customers Management</a></li>
+                        <li><a href="../contact/contactdata.php"><i class="fas fa-message"></i>Contact Message</a></li>
                     </ul>
                 </nav>
                 <div class="setting">

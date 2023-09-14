@@ -1,12 +1,21 @@
 <?php
-include 'config.php';
+include '../dbconnect.php'; // Include your database connection
 
-if(isset($_GET['contact_id'])){
-   $user_id = $_GET['contact_id'];
-   $delete_query = "DELETE FROM `user_table` WHERE id = $user_id";
-   mysqli_query($conn, $delete_query) or die('delete query failed');
-   header('location: contactdata.php');
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $contactId = $_GET['id'];
+    
+    // Delete the contact with the given ID
+    $deleteQuery = "DELETE FROM contact_tbl WHERE contact_id = $contactId";
+    $result = mysqli_query($conn, $deleteQuery);
+
+    if ($result) {
+        echo '<script>alert("Successfully Deleted Contact!");</script>';
+        header("Location: contactdata.php");
+        exit();
+    } else {
+        echo '<script>alert("Error Deleting Contact!");</script>';
+    }
 } else {
-   header('location: contactdata.php');
+    echo "Invalid contact ID.";
 }
 ?>

@@ -2,7 +2,7 @@
 $activePage = 'products';
 include "header.php";
 require 'dbconnect.php';
-session_start();
+// session_start();
 
 if (isset($_GET['product_id']) && is_numeric($_GET['product_id'])) {
     $product_id = $_GET['product_id'];
@@ -28,15 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $total_price = $price * $quantity;
 
     // Insert data into cart table
-    $insert_sql = "INSERT INTO cart (cart_id, product_name, product_price, product_image, quantity, total_price)
+    $insert_sql = "INSERT INTO cart (product_id, product_name, product_price, product_image, quantity, total_price)
                    VALUES ('$product_id', '$product_name', $price, '$image', $quantity, $total_price)";
+
 
     $insert_result = mysqli_query($conn, $insert_sql);
 
     if ($insert_result) {
-        echo "Item added to cart successfully";
+        echo "<script>alert('Item added to cart successfully');</script>";
     } else {
-        echo "Error adding item to cart: " . mysqli_error($conn);
+        echo "<script>alert('Error adding item to cart: " . mysqli_error($conn) . "');</script>";
     }
 }
 
@@ -55,11 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
         <select>
             <option>KG</option>
             <option>Gram</option>
-            <option>Lbs</option>
+            <option>Lbs</option> 
         </select>      
     <form action="" method="post">
         <input type="number" name="quantity" value="1">
         <input type="hidden" name="id" value="<?php echo $productDetails['product_id']; ?>">
+        
         <input type="hidden" name="name" value="<?php echo $productDetails['product_name']; ?>">
         <input type="hidden" name="price" value="<?php echo $productDetails['price']; ?>">
         <input type="hidden" name="image" value="<?php echo $productDetails['image']; ?>">
@@ -72,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     <div class="single-pro-details">
         <p>Product not found.</p>
     </div>
+    
     <?php endif; ?>
 </section>
 

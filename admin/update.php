@@ -43,13 +43,13 @@ if(isset($_POST['submit'])) {
         }
     } else {
         // Update data in the database without changing the image
-        // $sql = "UPDATE product_tbl SET product_name='$product_name', price=$price, quantity=$quantity, description='$description' WHERE product_id='$p_id'"; 
+        $sql = "UPDATE product_tbl SET product_name='$product_name', price=$price, quantity=$quantity, description='$description' WHERE product_id='$p_id'"; 
 
-        // if ($conn->query($sql) === TRUE) {
-        //     $statusMsg = "Product updated successfully";
-        // } else {
-        //     $statusMsg = "Error: Failed to update product";
-        // }
+        if ($conn->query($sql) === TRUE) {
+            $statusMsg = "Product updated successfully";
+        } else {
+            $statusMsg = "Error: Failed to update product";
+        }
     }
 }
 ?>
@@ -100,7 +100,7 @@ if(isset($_POST['submit'])) {
         </div>
 
         <div class="status-msg">
-            <?php echo $statusMsg; ?>
+        <?php echo '<script>alert("' . $statusMsg . '");</script>'; ?>
         </div>
     </form>
     <?php endwhile; 

@@ -8,8 +8,16 @@ if (isset($_POST['update'])) {
    $update_phone = mysqli_real_escape_string($conn, $_POST['update_phone']);
 
    $update_query = "UPDATE `form` SET name = '$update_name', email = '$update_email', phone = '$update_phone' WHERE id = $user_id";
-   mysqli_query($conn, $update_query) or die('update query failed');
-   header('location: manageCustomer.php');
+   $update_res = mysqli_query($conn, $update_query);
+   if($update_res){
+    echo '<script>alert("Customer Update Successfully!");</script>';
+    echo '<script>window.location.href = "manageCustomer.php";</script>';
+}
+
+else {
+    echo '<script>alert("Customer Update Failed!");</script>';
+    echo '<script>window.location.href = "manageCustomer.php";</script>';
+   }
 }
 
 if (isset($_GET['id'])) {
@@ -26,7 +34,7 @@ if (isset($_GET['id'])) {
 <html lang="en">
 <head>
     <title>Update Customer</title>
-    <link rel="stylesheet" href="./css/customer.css">
+    <link rel="stylesheet" href="../css/customer.css">
    <!-- Head content goehere -->
 </head>
 <body>

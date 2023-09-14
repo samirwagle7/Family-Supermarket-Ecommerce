@@ -45,6 +45,7 @@
       <tbody>
         <?php
           require 'dbconnect.php';
+
           $stmt = $conn->prepare('SELECT * FROM cart');
           $stmt->execute();
           $result = $stmt->get_result();
@@ -56,7 +57,7 @@
           <td><?= $row['cart_id'] ?></td>
           <input type="hidden" class="pid" value="<?= $row['cart_id'] ?>">
 
-          <td><img src="<?= $row['product_image'] ?>" width="50"></td>
+          <td><img src="admin/uploads/<?php echo $row['product_image']; ?>" alt="pro-image" ></td>
           <td><?= $row['product_name'] ?></td>
           <td><i class="fa-solid fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row['product_price'],2); ?></td>
           <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
@@ -70,10 +71,10 @@
           <?php endwhile; ?>
 
         <tr>
-          <td colspan="3"><a href="products.php" class="btn btn-success"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping</a></td>
+          <td class="con-shop" colspan="3"><a href="products.php" class="btn btn-success"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping</a></td>
           <td colspan="2"><b>Grand Total</b></td>
           <td><b><i class="fa-solid fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($grand_total,2); ?></b></td>
-          <td><a href="checkout.php" class="btn btn-info <?= ($grand_total > 1) ? '' : 'disabled'; ?>"><i class="far fa-credit-card"></i>&nbsp;&nbsp;Checkout</a></td>
+          <td class="check-out"><a href="checkout.php" class="btn btn-info <?= ($grand_total > 1) ? '' : 'disabled'; ?>"><i class="far fa-credit-card"></i>&nbsp;&nbsp;Checkout</a></td>
         </tr>
 
       </tbody>

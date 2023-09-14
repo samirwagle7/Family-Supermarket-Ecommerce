@@ -1,12 +1,18 @@
 <?php
-include 'config.php';
+include '../dbconnect.php';
 
-if(isset($_GET['id'])){
-   $user_id = $_GET['id'];
-   $delete_query = "DELETE FROM `users_table` WHERE id = $user_id";
-   mysqli_query($conn, $delete_query) or die('delete query failed');
-   header('location: store.php');
+if(isset($_GET['id']) && is_numeric($_GET['id'])) {
+   $adminId = $_GET['id'];
+   
+   $deleteQuery = "DELETE FROM `users_table` WHERE id = $adminId";
+
+   if(mysqli_query($conn, $deleteQuery)) {
+      echo "Admin deleted successfully.";
+      header('location: storeAdminDetails.php');
+   } else {
+      echo "Error deleting admin: " . mysqli_error($conn);
+   }
 } else {
-   header('location: store.php');
+   echo "Invalid admin ID.";
 }
 ?>

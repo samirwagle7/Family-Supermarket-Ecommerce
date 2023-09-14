@@ -6,6 +6,8 @@ if(isset($_POST['submit'])){
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+   $phone = mysqli_real_escape_string($conn, ($_POST['phone']));
+
    $select = mysqli_query($conn, "SELECT * FROM `users_table` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
    if(mysqli_num_rows($select) > 0){
@@ -14,7 +16,7 @@ if(isset($_POST['submit'])){
       if($pass != $cpass){
          $message[] = 'Confirm password not matched!';
       }else{
-         $insert = mysqli_query($conn, "INSERT INTO `users_table`(name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
+         $insert = mysqli_query($conn, "INSERT INTO `users_table`(name, email, password, phone) VALUES('$name', '$email', '$pass', '$phone')") or die('query failed');
 
          if($insert){
             $message[] = 'Registered successfully!';
@@ -55,7 +57,7 @@ if(isset($_POST['submit'])){
          <input type="email" name="email" placeholder="Enter email" class="box" required>
          <input type="password" name="password" placeholder="Enter password" class="box" required>
          <input type="password" name="cpassword" placeholder="Confirm password" class="box" required>
-         <input type="tel" name="phone" placeholder="Enter your 10-digit phone number" class="box" required>
+         <input type="text" name="phone" placeholder="Enter your 10-digit phone number" class="box" required>
          <input type="submit" name="submit" value="Register now" class="btn">
          <p>Already have an account? <a href="admin_login.php">Login now</a></p>
       </form>

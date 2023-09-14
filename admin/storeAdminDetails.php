@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../dbconnect.php';
 
 $select = mysqli_query($conn, "SELECT * FROM `users_table`") or die('query failed');
 ?>
@@ -88,7 +88,7 @@ $select = mysqli_query($conn, "SELECT * FROM `users_table`") or die('query faile
          echo '<td>' . $row['phone'] . '</td>';
      
      
-         echo '<td><a href="update.php?id=' . $row['id'] . '"></a> | <a href="delete.php?id=' . $row['id'] . '">Remove</a></td>';
+         echo '<td><a href="update.php?id=' . $row['id'] . '"></a> | <a href="admin_delete.php?id=' . $row['id'] . '">Remove</a></td>';
          echo '</tr>';
       }
       ?>

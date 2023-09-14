@@ -1,4 +1,3 @@
-<!-- action page -->
 <?php
 	session_start();
 	require 'dbconnect.php';
@@ -46,7 +45,7 @@
 
 	  echo $rows;
 	}
-
+ 
 	// Remove single items from cart
 	if (isset($_GET['remove'])) {
 	  $id = $_GET['remove'];
@@ -82,74 +81,146 @@
 	  $stmt->execute();
 	}
 
-	// Checkout and save customer info in the orders table
-	if (isset($_POST['action']) && isset($_POST['action']) == 'order') {
-	  $name = $_POST['name'];
-	  $email = $_POST['email'];
-	  $phone = $_POST['phone'];
-	  $products = $_POST['products'];
-	  $grand_total = $_POST['grand_total'];
-	  $address = $_POST['address'];
-	  $pmode = $_POST['pmode'];
+	// // Checkout and save customer info in the orders table
+	// if (isset($_POST['action']) && isset($_POST['action']) == 'order') {
+	//   $name = $_POST['name'];
+	//   $email = $_POST['email'];
+	//   $phone = $_POST['phone'];
+	//   $products = $_POST['products'];
+	//   $grand_total = $_POST['grand_total'];
+	//   $address = $_POST['address'];
+	//   $pmode = $_POST['pmode'];
 
-	  $data = '';
+	//   $data = '';
 
-	  $stmt = $conn->prepare('INSERT INTO orders (username,email,phone,address,payment_mode,products,paid_amount)VALUES(?,?,?,?,?,?,?)');
-	  $stmt->bind_param('sssssss',$name,$email,$phone,$address,$pmode,$products,$grand_total);
-	  $stmt->execute();
-	  $stmt2 = $conn->prepare('DELETE FROM cart');
-	  $stmt2->execute();
-	  $data .= '<div class="order-summary">
-								<h1>Thank You!</h1>
-								<h2>Your Order Placed Successfully!</h2>
-								<h4>Items Purchased : ' . $products . '</h4>
-								<h4>Your Name : ' . $name . '</h4>
-								<h4>Your E-mail : ' . $email . '</h4>
-								<h4>Your Phone : ' . $phone . '</h4>
-								<h4>Total Amount Paid : ' . number_format($grand_total,2) . '</h4>
-								<h4>Payment Mode : ' . $pmode . '</h4>
-						  </div>';
-	  echo $data;
-	}
-?>
+	//   $stmt = $conn->prepare('INSERT INTO orders (username,email,phone,address,payment_mode,products,paid_amount)VALUES(?,?,?,?,?,?,?)');
+	//   $stmt->bind_param('sssssss',$name,$email,$phone,$address,$pmode,$products,$grand_total);
+	//   $stmt->execute();
+	//   $stmt2 = $conn->prepare('DELETE FROM cart');
+	//   $stmt2->execute();
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-  .order-summary {
-    
-    text-align: center;
-  }
 
-  .order-summary h1 {
-    font-size: 2.5rem;
-    color: #1a63b5;
-    margin-top: 2rem;
-  }
 
-  .order-summary h2 {
-    font-size: 2rem;
-    color: #28a745;
-  }
+	  // Checkout and save customer info in the orders table
+if (isset($_POST['action']) && $_POST['action'] == 'order') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $products = $_POST['products'];
+    $grand_total = $_POST['grand_total'];
+    $address = $_POST['address'];
+    $pmode = $_POST['payment_mode'];
 
-  .order-summary h4 {
-    font-size: 1.25rem;
-    color: #fff;
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 1rem;
-  }
+    // Fetch the user ID from the session
+    $customer_id = $_SESSION['customer_id'];
 
- 
-</style>
+    // Fetch product IDs from the cart
+    $product_ids = array();
+    $stmt = $conn->prepare('SELECT product_id FROM cart');
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+        $product_ids[] = $row['product_id'];
+    }
+    $product_ids_str = implode(',', $product_ids);
 
-</head>
-<body>
+    // Insert order details into the order table
+    $stmt = $conn->prepare('INSERT INTO orders (product_id, customer_id, username, email, phone, address, payment_mode, products, paid_amount) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $stmt->bind_param('iissssssd', $product_ids_str, $customer_id, $name, $email, $phone, $address, $pmode, $products, $grand_total);
+    if ($stmt->execute()) {
+        $_SESSION['showAlert'] = 'block';
+        $_SESSION['message'] = 'Order placed successfully.';
+        // Clear the cart after successful order placement
+        $stmt2 = $conn->prepare('DELETE FROM cart');
+        $stmt2->execute();
+		$confirmationMessage = '
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Order Confirmation</title>
+			<style>
+				/* CSS for the Thank You message */
+				.order-success-text {
+					height: 80vh; 
+                    width: 50vw; 
+					text-align: center;
+					margin: 0 auto;
+					padding: 15px;
+					background-color: #f7f7f7;
+					border-radius: 10px;
+				}
+		
+				.order-success-text h1 {
+					font-size: 2rem;
+					color: #dc3545;
+				}
+		
+				.order-success-text h2 {
+					font-size: 1.5rem;
+					color: #28a745;
+				}
+		
+				.order-success-text h4 {
+					font-size: 1rem;
+					color: #343a40;
+					background-color: #f2f2f2;
+					padding: 10px;
+					border-radius: 5px;
+				}
+		
+				/* CSS for the Thank You button container */
+				.thankyou-button {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 10px;
+					margin-top: 20px;
+				}
+		
+				.thankyou-button a {
+					display: inline-block;
+					padding: 10px 20px;
+					background-color: #1a63b5;
+					color: #fff;
+					border-radius: 5px;
+					text-decoration: none;
+					font-weight: bold;
+					transition: background-color 0.3s;
+				}
+		
+				.thankyou-button a:hover {
+					background-color: #0056b3;
+				}
+			</style>
+		</head>
+		<body>
+			<div class="order-success-text">
+				<h1 class="display-4 mt-2 text-danger">Thank You!</h1>
+				<h2 class="text-success">Your Order Placed Successfully!</h2>
+				<h4 class="bg-danger text-light rounded p-2">Items Purchased: <?= $products ?></h4>
+				<h4>Your Name : ' . $name . '</h4>
+				<h4>Your E-mail : ' . $email . '</h4>
+				<h4>Your Phone : ' . $phone . '</h4>
+				<h4>Total Amount Paid : ' . number_format($grand_total, 2) . '</h4>
+				<h4>Payment Mode : ' . $pmode . '</h4>
+				<div class="thankyou-button">
+					<a href="products.php"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping</a>
+					<a href="customer.php"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Profile</a>
+				</div>
+			</div>
+		</body>
+		</html>
+		';
+	  echo $confirmationMessage;
+        exit();
+    } else {
+        echo 'Error inserting order: ' . mysqli_error($conn);
+    }
+
+}
+	  
 	
-</body>
-</html>
+?>

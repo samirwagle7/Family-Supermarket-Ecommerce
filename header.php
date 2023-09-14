@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce-Samir Wagle</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/admin.css">
+   
     <script src="https://kit.fontawesome.com/18e31dbed1.js" crossorigin="anonymous"></script>
 </head>
 <body>

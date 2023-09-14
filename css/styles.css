@@ -844,6 +844,10 @@ footer .copyright {
     
 }
 
+
+
+
+
 #cart img {
     width: 100px;
     height: 100px;
@@ -1117,7 +1121,7 @@ footer .copyright {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 25px;
 }
 
 .checkout-form {
@@ -1326,10 +1330,23 @@ footer .copyright {
     
 }
 
+/* .right-dash-sec {
+    width: 20%;
+    box-shadow: 4px 0px 4px rgba(0, 21, 250, 0.831);
+    
+} */
+
+/* adding box shadow */
 .right-dash-sec {
     width: 20%;
-    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: -5px 0px 8px -5px rgba(0,0,0,0.3) ;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.right-dash-sec-customer {
+    position: static;
+    width: 20%;
 }
 
 .left-dash-sec h2 {
@@ -1350,6 +1367,7 @@ footer .copyright {
     display: flex;
     flex-direction: column;
     box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .sidebar nav {
@@ -1388,16 +1406,13 @@ footer .copyright {
     max-width: 10px;
 }
 
-.sidebar figure {
+.name {
     text-align: center;
 }
-.sidebar figure img{
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    border-radius: 50px;
-    margin: 5px auto;
-     
+
+.name h3 {
+    margin-top: 5px;
+    text-transform: capitalize;
 }
 
 .setting {
@@ -1513,7 +1528,118 @@ footer .copyright {
     outline: none;
     background-color: #10437e;
 }
+.text-center {
+  text-align: center;
+}
 
+.order-summary {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h1 {
+  font-size: 2.5rem;
+  color: #dc3545;
+  margin-top: 1rem;
+}
+
+.order-summary h2 {
+  font-size: 2rem;
+  color: #28a745;
+  margin-top: 1rem;
+}
+
+.order-summary h4 {
+  font-size: 1.25rem;
+  color: #343a40;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-container a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button-container a:hover {
+  background-color: #0056b3;
+}
+/* thankyou message */
+
+.order-success-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-success-text h1 {
+    font-size: 2.5rem;
+    color: #dc3545;
+    margin-top: 1rem;
+}
+
+.order-success-text h2 {
+    font-size: 2rem;
+    color: #28a745;
+    margin-top: 1rem;
+}
+
+.order-success-text h4 {
+    font-size: 1.25rem;
+    color: #343a40;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* CSS for the Thank You button container */
+.thankyou-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.thankyou-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.thankyou-button a:hover {
+    background-color: #0056b3;
+}
 
 /* Start Media Query medium screen device- to make resposive */
 
@@ -1653,8 +1779,12 @@ footer .copyright {
         width: 100%;
     }
     /* products list for home and product page */
+    .products {
+        text-align: center;
+    }
     .products .product {
         width: 40%;
+        text-align: center;
     }
     .products .pro-container {
         justify-content: space-around;
@@ -1863,5 +1993,7 @@ footer .copyright {
     .checkout-btn {
         font-size: 16px;
     }
+
+    
 }
 

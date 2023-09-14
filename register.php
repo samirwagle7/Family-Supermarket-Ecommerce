@@ -1,34 +1,43 @@
 <?php
 include 'dbconnect.php';
 
-if(isset($_POST['submit'])){
+// Check if the registration form was submitted
+if (isset($_POST['submit'])) {
+   // Sanitize and escape user inputs
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
-   $phone = mysqli_real_escape_string($conn, md5($_POST['phone']));
+   $phone = mysqli_real_escape_string($conn, $_POST['phone']);
 
-
+   // Check if user with the same email and password exists
    $select = mysqli_query($conn, "SELECT * FROM `form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
-   if(mysqli_num_rows($select) > 0){
+   if (mysqli_num_rows($select) > 0) {
       $message[] = 'User already exists'; 
-   }else{
-      if($pass != $cpass){
+   } else {
+      if ($pass != $cpass) {
          $message[] = 'Confirm password not matched!';
-      }else{
-         $insert = mysqli_query($conn, "INSERT INTO `form`(name, email, password,phone) VALUES('$name', '$email', '$pass','$phone')") or die('query failed');
+      } else {
+         // Insert user data into the database
+         $insert = mysqli_query($conn, "INSERT INTO `form`(name, email, password, phone) VALUES('$name', '$email', '$pass', '$phone')") or die('query failed');
 
-         if($insert){
+         if ($insert) {
             $message[] = 'Registered successfully!';
-            header('location:login.php');
-         }else{
+            
+            // Check if the registration was initiated from the checkout page
+            if (isset($_GET['from']) && $_GET['from'] === 'checkout') {
+               header('location:checkout.php'); // Redirect to checkout page
+            } else {
+               header('location:login.php'); // Redirect to login page
+            }
+         } else {
             $message[] = 'Registration failed!';
          }
       }
    }
 }
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
